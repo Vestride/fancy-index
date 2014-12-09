@@ -1,5 +1,7 @@
 # Fancy Index
 
+A responsive Apache index page.
+
 I was tired of seeing the ugly apache-generated index page, so I decided to do something about it. Inspired by [Seti UI](https://github.com/jesseweed/seti-ui), this project adds an `.htaccess` file which tells apache to use a table, among other things, instead of `<pre>`.
 
 ### Before Fancy Index:
