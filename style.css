@@ -59,14 +59,19 @@ table tr td {
 
 a {
   text-decoration: none;
+  color: #3498db;
 }
 a:hover {
   text-decoration: underline;
 }
+a:visited {
+  color: #8e44ad;
+}
 td img {
   vertical-align: middle;
   margin-right: 8px;
-  padding-bottom: 2px;
+  margin-bottom: 2px;
+  height: auto;
 }
 
 /* Hide extra columns so they don't squash file names */

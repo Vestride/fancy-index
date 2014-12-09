@@ -33,17 +33,20 @@ void(function() {
 
     // Swap special images.
     var special = [{
-      icon: '/includes/icons/grunt.svg',
+      icon: '/fancy-index/icons/grunt.svg',
       match: 'gruntfile.js'
     }, {
-      icon: '/includes/icons/gulp.png',
+      icon: '/fancy-index/icons/gulp.png',
       match: 'gulpfile.js'
     }, {
-      icon: '/includes/icons/bower.svg',
+      icon: '/fancy-index/icons/bower.svg',
       match: 'bower.json'
     }, {
-      icon: '/includes/icons/gulp.png',
+      icon: '/fancy-index/icons/gulp.png',
       match: 'gulpfile.js'
+    }, {
+      icon: '/fancy-index/icons/npm.svg',
+      match: 'package.json'
     }];
     toArray(table.querySelectorAll('.indexcolname')).forEach(function(cell) {
       for (var i = 0, len = special.length; i < len; i++) {

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" inkscape:version="0.43" sodipodi:docname="logo-python-inkscape.svg" sodipodi:docbase="/home/sdeibel" sodipodi:version="0.32" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:cc="http://web.resource.org/cc/" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="1.172 2.592 120 120"
+	 enable-background="new 1.172 2.592 120 120" xml:space="preserve">
+<linearGradient id="path1948_1_" gradientUnits="userSpaceOnUse" x1="-122.8414" y1="127.7942" x2="-13.8251" y2="34.0003" gradientTransform="matrix(0.5625 0 0 -0.568 71.9676 82.1808)">
+	<stop  offset="0" style="stop-color:#5A9FD4"/>
+	<stop  offset="1" style="stop-color:#306998"/>
+</linearGradient>
+<path id="path1948" fill="url(#path1948_1_)" d="M60.51,6.398c-4.584,0.021-8.961,0.412-12.812,1.094
+	c-11.346,2.005-13.406,6.2-13.406,13.937v10.219h26.812v3.406H34.291H24.229c-7.792,0-14.616,4.684-16.75,13.594
+	c-2.462,10.213-2.571,16.586,0,27.25c1.906,7.938,6.458,13.594,14.25,13.594h9.219v-12.25c0-8.85,7.657-16.656,16.75-16.656h26.781
+	c7.455,0,13.406-6.138,13.406-13.625V21.429c0-7.266-6.13-12.725-13.406-13.937C69.873,6.725,65.094,6.377,60.51,6.398z
+	 M46.01,14.617c2.77,0,5.031,2.299,5.031,5.125c0,2.816-2.262,5.094-5.031,5.094c-2.779,0-5.031-2.277-5.031-5.094
+	C40.979,16.915,43.231,14.617,46.01,14.617z"/>
+<linearGradient id="path1950_1_" gradientUnits="userSpaceOnUse" x1="28.3214" y1="-22.7677" x2="-10.6083" y2="32.3111" gradientTransform="matrix(0.5625 0 0 -0.568 71.9676 82.1808)">
+	<stop  offset="0" style="stop-color:#FFD43B"/>
+	<stop  offset="1" style="stop-color:#FFE873"/>
+</linearGradient>
+<path id="path1950" fill="url(#path1950_1_)" d="M91.229,35.054V46.96c0,9.231-7.826,17-16.75,17H47.698
+	c-7.336,0-13.406,6.278-13.406,13.625v25.531c0,7.266,6.319,11.54,13.406,13.625c8.487,2.496,16.626,2.947,26.781,0
+	c6.75-1.954,13.406-5.888,13.406-13.625V92.898H61.104v-3.406h26.781h13.406c7.792,0,10.696-5.435,13.406-13.594
+	c2.799-8.399,2.68-16.476,0-27.25c-1.926-7.757-5.604-13.594-13.406-13.594H91.229z M76.166,99.71c2.779,0,5.031,2.277,5.031,5.094
+	c0,2.826-2.252,5.125-5.031,5.125c-2.77,0-5.031-2.299-5.031-5.125C71.135,101.988,73.397,99.71,76.166,99.71z"/>
+</svg>

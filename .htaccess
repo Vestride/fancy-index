@@ -14,7 +14,7 @@ AddEncoding gzip svgz
 <IfModule mod_autoindex.c>
 
   # SET INDEX OPTIONS
-  IndexOptions IgnoreCase FancyIndexing HTMLTable SuppressHTMLPreamble FoldersFirst VersionSort NameWidth=* DescriptionWidth=* XHTML IconHeight=24 IconWidth=24
+  IndexOptions IgnoreCase FancyIndexing HTMLTable SuppressHTMLPreamble FoldersFirst VersionSort NameWidth=* DescriptionWidth=* XHTML IconHeight=16 IconWidth=16
 
   # Other options.
   # IconsAreLinks SuppressColumnSorting
@@ -34,34 +34,34 @@ AddEncoding gzip svgz
   IndexIgnore .htaccess .ftpquota .DS_Store *,v *,t .??* *~ *#
 
   # DEFAULT ICON
-  DefaultIcon /fancy-index/icons/file_type_text.png
+  DefaultIcon /fancy-index/icons/file-text.svg
 
   AddIcon /fancy-index/icons/back.svg ..
-  AddIcon /fancy-index/icons/folder.png ^^DIRECTORY^^
+  AddIcon /fancy-index/icons/file-directory.svg ^^DIRECTORY^^
 
   # SPECIFIC FILE ICONS
-  AddIcon /fancy-index/icons/file_type_less.png .less
-  AddIcon /fancy-index/icons/file_type_css.png .css
-  AddIcon /fancy-index/icons/file_type_coffeescript.png .coffee
-  AddIcon /fancy-index/icons/file_type_java.png .java
-  AddIcon /fancy-index/icons/file_type_markdown.png .markdown .md
-  AddIcon /fancy-index/icons/file_type_html.png .html
-  AddIcon /fancy-index/icons/file_type_image.png .png .jpg .jpeg .webp .gif .ai .bmp .psd .svg .svgx
-  AddIcon /fancy-index/icons/file_type_jade.png .jade
-  AddIcon /fancy-index/icons/file_type_js.png .js
-  AddIcon /fancy-index/icons/file_type_settings.png .json
-  AddIcon /fancy-index/icons/file_type_mustache.png .mustache
-  AddIcon /fancy-index/icons/file_type_php.png .php
-  AddIcon /fancy-index/icons/file_type_python.png .py
-  AddIcon /fancy-index/icons/file_type_ruby.png .rb
-  AddIcon /fancy-index/icons/file_type_rust.png .rust
-  AddIcon /fancy-index/icons/file_type_sass.png .sass
-  AddIcon /fancy-index/icons/file_type_scss.png .scss
-  AddIcon /fancy-index/icons/file_type_source.png .source
-  AddIcon /fancy-index/icons/file_type_stylus.png .styl
-  AddIcon /fancy-index/icons/file_type_apache.png .apache
-  AddIcon /fancy-index/icons/file_type_c.png .c
-  AddIcon /fancy-index/icons/file_type_source.png .source
+  AddIcon /fancy-index/icons/file-code.svg .c .h .mustache .rust .source .apache .styl .jade
+  AddIcon /fancy-index/icons/file-media.svg .png .jpg .jpeg .webp .gif .bmp .psd .mp4 .webm .ogv .mov
+  AddIcon /fancy-index/icons/file-pdf.svg .pdf
+  AddIcon /fancy-index/icons/file-text.svg .txt README readme Procfile
+  AddIcon /fancy-index/icons/file-zip.svg .zip .z .gz .Z .tgz .tar.gz .tar .rar
+  AddIcon /fancy-index/icons/less.png .less
+  AddIcon /fancy-index/icons/css.svg .css
+  AddIcon /fancy-index/icons/html.svg .html .htm
+  AddIcon /fancy-index/icons/coffee.svg .coffee
+  AddIcon /fancy-index/icons/java.svg .java
+  AddIcon /fancy-index/icons/markdown.svg .markdown .md
+  AddIcon /fancy-index/icons/js.svg .js
+  AddIcon /fancy-index/icons/settings.svg .json
+  AddIcon /fancy-index/icons/mustache.svg .mustache
+  AddIcon /fancy-index/icons/php.svg .php
+  AddIcon /fancy-index/icons/python.svg .py
+  AddIcon /fancy-index/icons/ruby.svg .rb
+  AddIcon /fancy-index/icons/rust.svg .rust
+  AddIcon /fancy-index/icons/sass.svg .sass
+  AddIcon /fancy-index/icons/scss.svg .scss
+  AddIcon /fancy-index/icons/svg.svg .svg .svgx .eps .ai
+  AddIcon /fancy-index/icons/xml.svg .xml
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3
