@@ -33,3 +33,11 @@ DocumentRoot "/Users/glen.cheney/Sites"
 ```
 
 Now restart apache `sudo apachectl restart`.
+
+## Mobile Comparison
+
+Now you don't have to zoom in or be a sniper with your finger!
+
+| Default  | Fancy  |
+|:--------:|:------:|
+|![before fancy index (mobile)](before_mobile.png)  |  ![after fancy index (mobile)](after_mobile.png)|
