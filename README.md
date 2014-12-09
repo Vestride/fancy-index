@@ -18,7 +18,7 @@ I'm going to assume you're using a `Sites` folder with apache, but it could be d
 1. Clone or download the files.
 2. Add them to your `Sites` directory. The structure should be `/Users/USERNAME/Sites/fancy-index`.
 3. Copy the `.htaccess` file up one directory to `/Users/USERNAME/Sites/.htaccess`.
-4. Update your `DocumentRoot` in `/etc/apache2/USERNAME.conf` to point to your `Sites`. This will also cause `localhost` to point to `Sites` and you won't have to use the `~USERNAME` to access it.
+4. Update your `DocumentRoot` in `/etc/apache2/users/USERNAME.conf` to point to your `Sites`. This will also cause `localhost` to point to `Sites` and you won't have to use the `~USERNAME` to access it.
 
 This is what mine looks like:
 ```apache
