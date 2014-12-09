@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #404040;
+}
+table {
+  width: 100%;
+  background: white;
+  border: 0;
+  table-layout: auto;
+}
+table caption {
+  background: transparent;
+  color: #222222;
+  font-size: 1rem;
+  font-weight: bold;
+}
+table thead {
+  background: whitesmoke;
+}
+table thead tr th,
+table thead tr td {
+  padding: 0.5rem 0.625rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #222222;
+}
+table tfoot {
+  background: whitesmoke;
+}
+table tfoot tr th,
+table tfoot tr td {
+  padding: 0.5rem 0.625rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #222222;
+}
+table tr th,
+table tr td {
+  padding: 0.5625rem 0.625rem;
+  font-size: 0.875rem;
+  color: #222222;
+  text-align: left;
+}
+table tr.alt,
+table tr:nth-of-type(even) {
+  background: #f9f9f9;
+}
+table thead tr th,
+table tfoot tr th,
+table tfoot tr td,
+table tbody tr th,
+table tbody tr td,
+table tr td {
+  display: table-cell;
+  line-height: 1.125rem;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+td img {
+  vertical-align: middle;
+  margin-right: 8px;
+  padding-bottom: 2px;
+}
+
+/* Hide extra columns so they don't squash file names */
+@media (max-width: 600px) {
+  table tr > *:nth-child(2),
+  table tr > *:nth-child(3),
+  table tr > *:nth-child(4) {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.125em;
+  }
+}

@@ -1,0 +1,104 @@
+# ENABLE DIRECTORY VIEWS
+Options +Indexes
+
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+ order allow,deny
+ deny from all
+</Files>
+
+# DIRECTORY CUSTOMIZATION
+<IfModule mod_autoindex.c>
+
+  # SET INDEX OPTIONS
+  IndexOptions IgnoreCase FancyIndexing HTMLTable SuppressHTMLPreamble FoldersFirst VersionSort NameWidth=* DescriptionWidth=* XHTML IconHeight=24 IconWidth=24
+
+  # Other options.
+  # IconsAreLinks SuppressColumnSorting
+
+  # SET DISPLAY ORDER
+  IndexOrderDefault Ascending Name
+
+  IndexStyleSheet /fancy-index/style.css
+
+  # SPECIFY HEADER FILE
+  HeaderName /fancy-index/header.html
+
+  # SPECIFY FOOTER FILE
+  ReadmeName /fancy-index/footer.html
+
+  # IGNORE THESE FILES
+  IndexIgnore .htaccess .ftpquota .DS_Store *,v *,t .??* *~ *#
+
+  # DEFAULT ICON
+  DefaultIcon /fancy-index/icons/file_type_text.png
+
+  AddIcon /fancy-index/icons/back.svg ..
+  AddIcon /fancy-index/icons/folder.png ^^DIRECTORY^^
+
+  # SPECIFIC FILE ICONS
+  AddIcon /fancy-index/icons/file_type_less.png .less
+  AddIcon /fancy-index/icons/file_type_css.png .css
+  AddIcon /fancy-index/icons/file_type_coffeescript.png .coffee
+  AddIcon /fancy-index/icons/file_type_java.png .java
+  AddIcon /fancy-index/icons/file_type_markdown.png .markdown .md
+  AddIcon /fancy-index/icons/file_type_html.png .html
+  AddIcon /fancy-index/icons/file_type_image.png .png .jpg .jpeg .webp .gif .ai .bmp .psd .svg .svgx
+  AddIcon /fancy-index/icons/file_type_jade.png .jade
+  AddIcon /fancy-index/icons/file_type_js.png .js
+  AddIcon /fancy-index/icons/file_type_settings.png .json
+  AddIcon /fancy-index/icons/file_type_mustache.png .mustache
+  AddIcon /fancy-index/icons/file_type_php.png .php
+  AddIcon /fancy-index/icons/file_type_python.png .py
+  AddIcon /fancy-index/icons/file_type_ruby.png .rb
+  AddIcon /fancy-index/icons/file_type_rust.png .rust
+  AddIcon /fancy-index/icons/file_type_sass.png .sass
+  AddIcon /fancy-index/icons/file_type_scss.png .scss
+  AddIcon /fancy-index/icons/file_type_source.png .source
+  AddIcon /fancy-index/icons/file_type_stylus.png .styl
+  AddIcon /fancy-index/icons/file_type_apache.png .apache
+  AddIcon /fancy-index/icons/file_type_c.png .c
+  AddIcon /fancy-index/icons/file_type_source.png .source
+
+  # FILE DESCRIPTIONS
+  AddDescription "MPEG Layer 3 Format" .mp3
+  AddDescription "GZIP compressed TAR archive" .tgz .tar.gz
+  AddDescription "GZIP compressed archive" .Z .z .gz .zip
+  AddDescription "RAR compressed archive" .rar
+  AddDescription "TAR compressed archive" .tar
+  AddDescription "ZIP compressed archive" .zip
+  AddDescription "Windows executable file" .exe
+  AddDescription "Common Gateway Interface" .cgi
+  AddDescription "Joint Photographics Experts Group" .jpg .jpeg .jpe
+  AddDescription "Graphic Interchange Format" .gif
+  AddDescription "Portable Network Graphic" .png
+  AddDescription "Vector graphic" .ps .ai .eps
+  AddDescription "Hypertext Markup Language" .html .shtml .htm
+  AddDescription "Cascading Style Sheet" .css
+  AddDescription "DocType Definition" .dtd
+  AddDescription "Extensible Markup Language" .xml
+  AddDescription "Win32 compressed HTML help" .chm
+  AddDescription "Adobe Portable Document Format" .pdf
+  AddDescription "Plain text file" .txt .nfo .faq .readme
+  AddDescription "Unix man page" .man
+  AddDescription "Email data" .eml .mbox
+  AddDescription "Microsoft Word document" .doc
+  AddDescription "PHP: Hypertext Preprocessor script" .php  .php3 .php4
+  AddDescription "PHP: Hypertext Preprocessor source code" .phps
+  AddDescription "JavaScript Object Notation" .json
+  AddDescription "JavaScript" .js
+  AddDescription "Java code"  .java
+  AddDescription "Unix shell script" .sh .shar .csh .ksh .command
+  AddDescription "Mac OS X shell script" .command
+  AddDescription "Configuration file" .conf
+  AddDescription "Mac OS X terminal" .term
+  AddDescription "BitTorrent file" .torrent
+  AddDescription "Windows link" .lnk .url
+  AddDescription "Scalable Vector Graphic" .svg
+
+  # DEFAULT DESCRIPTION
+  # AddDescription "[<span class='description'>Unknown item</span>]" *
+</IfModule>
