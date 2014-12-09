@@ -24,11 +24,15 @@ void(function() {
     thead.appendChild(firstRow);
     table.insertBefore(thead, table.firstElementChild);
 
+    // Remove the first column and put the image in the next.
     var rows = toArray(table.querySelectorAll('tr'));
     rows.forEach(function(row) {
+      var div = document.createElement('div');
+      div.className = 'img-wrap';
       var first = row.removeChild(row.firstElementChild).firstElementChild;
+      div.appendChild(first);
       var filename = row.firstElementChild;
-      filename.insertBefore(first, filename.firstElementChild);
+      filename.insertBefore(div, filename.firstElementChild);
     });
 
     // Swap special images.
@@ -132,7 +136,17 @@ void(function() {
       var stamp = date.textContent.trim();
       if (!stamp || i === 0) return;
 
-      var time = new Date(stamp);
+      // 2014-12-09 10:43 -> 2014, 11, 09, 10, 43, 0.
+      var parts = stamp.split(' ');
+      var day = parts[0].split('-');
+      var timeOfDay = parts[1].split(':');
+      var year = parseInt(day[0], 10);
+      var month = parseInt(day[1], 10) - 1;
+      var _day = parseInt(day[2], 10);
+      var hour = parseInt(timeOfDay[0], 10);
+      var minutes = parseInt(timeOfDay[1], 10);
+
+      var time = new Date(year, month, _day, hour, minutes, 0);
       var difference = Math.round((now.getTime() - time.getTime()) / 1000);
       date.textContent = getTimeSince(difference) + ' ago';
     });

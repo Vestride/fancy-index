@@ -61,16 +61,26 @@ a {
   text-decoration: none;
   color: #3498db;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 a:visited {
   color: #8e44ad;
 }
-td img {
+
+.img-wrap {
   vertical-align: middle;
+  display: inline-block;
   margin-right: 8px;
   margin-bottom: 2px;
+  width: 16px;
+}
+
+td img {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
