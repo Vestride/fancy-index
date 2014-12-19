@@ -78,6 +78,10 @@ a:visited {
   width: 16px;
 }
 
+.indexcolicon {
+  display: none\9;
+}
+
 td img {
   display: block;
   width: 100%;
