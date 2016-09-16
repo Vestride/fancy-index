@@ -27,12 +27,25 @@ void(function() {
     // Remove the first column and put the image in the next.
     var rows = toArray(table.querySelectorAll('tr'));
     rows.forEach(function(row) {
+      var iconColumn = row.children[0];
+      var fileColumn = row.children[1];
+
+      // Remove icon column.
+      row.removeChild(iconColumn);
+
+      var image = iconColumn.firstElementChild;
+
+      if (!image) {
+        return;
+      }
+
+      // Wrap icon in a div.img-wrap.
       var div = document.createElement('div');
       div.className = 'img-wrap';
-      var first = row.removeChild(row.firstElementChild).firstElementChild;
-      div.appendChild(first);
-      var filename = row.firstElementChild;
-      filename.insertBefore(div, filename.firstElementChild);
+      div.appendChild(image);
+
+      // Insert icon before filename.
+      fileColumn.insertBefore(div, fileColumn.firstElementChild);
     });
 
     // Swap special images.
