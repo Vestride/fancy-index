@@ -1,18 +1,18 @@
-void(function() {
+void(function () {
   'use strict';
 
   if (!Array.prototype.forEach) return;
 
-  var toArray = function(arrayLike) {
+  var toArray = function (arrayLike) {
     return [].slice.call(arrayLike);
   };
 
-  var fixTable = function() {
+  var fixTable = function () {
 
     var table = document.querySelector('table');
 
     // Remove <hr>s
-    toArray(table.querySelectorAll('hr')).forEach(function(hr) {
+    toArray(table.querySelectorAll('hr')).forEach(function (hr) {
       var row = hr.parentNode.parentNode;
       row.parentNode.removeChild(row);
     });
@@ -26,7 +26,7 @@ void(function() {
 
     // Remove the first column and put the image in the next.
     var rows = toArray(table.querySelectorAll('tr'));
-    rows.forEach(function(row) {
+    rows.forEach(function (row) {
       var iconColumn = row.children[0];
       var fileColumn = row.children[1];
 
@@ -49,23 +49,26 @@ void(function() {
     });
 
     // Swap special images.
-    var special = [{
-      icon: '/fancy-index/icons/grunt.svg',
-      match: 'gruntfile.js'
-    }, {
-      icon: '/fancy-index/icons/gulp.png',
-      match: 'gulpfile.js'
-    }, {
-      icon: '/fancy-index/icons/bower.svg',
-      match: 'bower.json'
-    }, {
-      icon: '/fancy-index/icons/gulp.png',
-      match: 'gulpfile.js'
-    }, {
-      icon: '/fancy-index/icons/npm.svg',
-      match: 'package.json'
-    }];
-    toArray(table.querySelectorAll('.indexcolname')).forEach(function(cell) {
+    var special = [
+      {
+        icon: '/fancy-index/icons/grunt.svg',
+        match: 'gruntfile.js',
+      }, {
+        icon: '/fancy-index/icons/gulp.png',
+        match: 'gulpfile.js',
+      }, {
+        icon: '/fancy-index/icons/bower.svg',
+        match: 'bower.json',
+      }, {
+        icon: '/fancy-index/icons/gulp.png',
+        match: 'gulpfile.js',
+      }, {
+        icon: '/fancy-index/icons/npm.svg',
+        match: 'package.json',
+      },
+    ];
+
+    toArray(table.querySelectorAll('.indexcolname')).forEach(function (cell) {
       for (var i = 0, len = special.length; i < len; i++) {
         if (cell.textContent.match(new RegExp(special[i].match, 'i'))) {
           cell.querySelector('img').src = special[i].icon;
@@ -76,13 +79,13 @@ void(function() {
   };
 
   // Underscore string's titleize.
-  var titleize = function(str) {
-    return str.toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+  var titleize = function (str) {
+    return str.toLowerCase().replace(/(?:^|\s|-)\S/g, function (c) {
       return c.toUpperCase();
     });
   };
 
-  var addTitle = function() {
+  var addTitle = function () {
     var path = window.location.pathname.replace(/\/$/g, '');
     var titleText;
 
@@ -104,7 +107,7 @@ void(function() {
     document.title = titleText;
   };
 
-  var getTimeSince = function(seconds) {
+  var getTimeSince = function (seconds) {
     var intervalType;
 
     var interval = Math.floor(seconds / 31536000);
@@ -142,10 +145,10 @@ void(function() {
     return interval + ' ' + intervalType;
   };
 
-  var fixTime = function() {
+  var fixTime = function () {
     var dates = toArray(document.querySelectorAll('.indexcollastmod'));
     var now = new Date();
-    dates.forEach(function(date, i) {
+    dates.forEach(function (date, i) {
       var stamp = date.textContent.trim();
       if (!stamp || i === 0) return;
 
