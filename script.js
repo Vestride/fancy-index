@@ -1,116 +1,78 @@
-void(function () {
-  'use strict';
-
-  if (!Array.prototype.forEach) return;
-
-  var toArray = function (arrayLike) {
-    return [].slice.call(arrayLike);
-  };
-
-  var fixTable = function () {
-
-    var table = document.querySelector('table');
+{
+  function fixTable() {
+    const table = document.querySelector('table');
 
     // Remove <hr>s
-    toArray(table.querySelectorAll('hr')).forEach(function (hr) {
-      var row = hr.parentNode.parentNode;
+    Array.from(table.querySelectorAll('hr')).forEach(({ parentNode }) => {
+      const row = parentNode.parentNode;
       row.parentNode.removeChild(row);
     });
 
     // Make a table head.
-    var thead = document.createElement('thead');
-    var firstRow = table.querySelector('tr');
+    const thead = document.createElement('thead');
+    const firstRow = table.querySelector('tr');
     firstRow.parentNode.removeChild(firstRow);
     thead.appendChild(firstRow);
     table.insertBefore(thead, table.firstElementChild);
 
     // Remove the first column and put the image in the next.
-    var rows = toArray(table.querySelectorAll('tr'));
-    rows.forEach(function (row) {
-      var iconColumn = row.children[0];
-      var fileColumn = row.children[1];
+    const rows = Array.from(table.querySelectorAll('tr'));
+    rows.forEach((row) => {
+      const iconColumn = row.children[0];
+      const fileColumn = row.children[1];
 
       // Remove icon column.
       row.removeChild(iconColumn);
 
-      var image = iconColumn.firstElementChild;
+      const image = iconColumn.firstElementChild;
 
       if (!image) {
         return;
       }
 
       // Wrap icon in a div.img-wrap.
-      var div = document.createElement('div');
+      const div = document.createElement('div');
       div.className = 'img-wrap';
       div.appendChild(image);
 
       // Insert icon before filename.
       fileColumn.insertBefore(div, fileColumn.firstElementChild);
     });
-
-    // Swap special images.
-    var special = [
-      {
-        icon: '/fancy-index/icons/grunt.svg',
-        match: 'gruntfile.js',
-      }, {
-        icon: '/fancy-index/icons/gulp.png',
-        match: 'gulpfile.js',
-      }, {
-        icon: '/fancy-index/icons/bower.svg',
-        match: 'bower.json',
-      }, {
-        icon: '/fancy-index/icons/gulp.png',
-        match: 'gulpfile.js',
-      }, {
-        icon: '/fancy-index/icons/npm.svg',
-        match: 'package.json',
-      },
-    ];
-
-    toArray(table.querySelectorAll('.indexcolname')).forEach(function (cell) {
-      for (var i = 0, len = special.length; i < len; i++) {
-        if (cell.textContent.match(new RegExp(special[i].match, 'i'))) {
-          cell.querySelector('img').src = special[i].icon;
-          return;
-        }
-      }
-    });
-  };
+  }
 
   // Underscore string's titleize.
-  var titleize = function (str) {
-    return str.toLowerCase().replace(/(?:^|\s|-)\S/g, function (c) {
-      return c.toUpperCase();
-    });
-  };
+  function titleize(str) {
+    return str.toLowerCase().replace(/(?:^|\s|-)\S/g, c => c.toUpperCase());
+  }
 
-  var addTitle = function () {
-    var path = window.location.pathname.replace(/\/$/g, '');
-    var titleText;
+  function addTitle() {
+    let path = window.location.pathname.replace(/\/$/g, '');
+    let titleText;
 
     if (path) {
-      var parts = path.split('/');
+      const parts = path.split('/');
       path = parts[parts.length - 1];
-      titleText = titleize(path).replace(/\-|\_/g, ' ');
-
+      titleText = titleize(path).replace(/-|_/g, ' ');
     } else {
       titleText = window.location.host;
     }
 
-    titleText = 'Index of ' + titleText;
+    titleText = `Index of ${titleText}`;
 
-    var h1 = document.createElement('h1');
+    const container = document.createElement('div');
+    container.id = 'page-header';
+    const h1 = document.createElement('h1');
     h1.appendChild(document.createTextNode(titleText));
-    h1.style.cssText = 'width:93%;margin-left:auto;margin-right:auto;';
-    document.body.insertBefore(h1, document.body.firstChild);
+    container.appendChild(h1);
+
+    document.body.insertBefore(container, document.body.firstChild);
     document.title = titleText;
-  };
+  }
 
-  var getTimeSince = function (seconds) {
-    var intervalType;
+  function getTimeSince(seconds) {
+    let intervalType;
 
-    var interval = Math.floor(seconds / 31536000);
+    let interval = Math.floor(seconds / 31536000);
     if (interval >= 1) {
       intervalType = 'year';
     } else {
@@ -142,34 +104,77 @@ void(function () {
       intervalType += 's';
     }
 
-    return interval + ' ' + intervalType;
-  };
+    return `${interval} ${intervalType}`;
+  }
 
-  var fixTime = function () {
-    var dates = toArray(document.querySelectorAll('.indexcollastmod'));
-    var now = new Date();
-    dates.forEach(function (date, i) {
-      var stamp = date.textContent.trim();
+  function fixTime() {
+    const dates = Array.from(document.querySelectorAll('.indexcollastmod'));
+    const now = new Date();
+    dates.forEach((date, i) => {
+      const stamp = date.textContent.trim();
       if (!stamp || i === 0) return;
 
       // 2014-12-09 10:43 -> 2014, 11, 09, 10, 43, 0.
-      var parts = stamp.split(' ');
-      var day = parts[0].split('-');
-      var timeOfDay = parts[1].split(':');
-      var year = parseInt(day[0], 10);
-      var month = parseInt(day[1], 10) - 1;
-      var _day = parseInt(day[2], 10);
-      var hour = parseInt(timeOfDay[0], 10);
-      var minutes = parseInt(timeOfDay[1], 10);
+      const parts = stamp.split(' ');
+      const day = parts[0].split('-');
+      const timeOfDay = parts[1].split(':');
+      const year = parseInt(day[0], 10);
+      const month = parseInt(day[1], 10) - 1;
+      const _day = parseInt(day[2], 10);
+      const hour = parseInt(timeOfDay[0], 10);
+      const minutes = parseInt(timeOfDay[1], 10);
 
-      var time = new Date(year, month, _day, hour, minutes, 0);
-      var difference = Math.round((now.getTime() - time.getTime()) / 1000);
-      date.textContent = getTimeSince(difference) + ' ago';
+      const time = new Date(year, month, _day, hour, minutes, 0);
+      const difference = Math.round((now.getTime() - time.getTime()) / 1000);
+      date.textContent = `${getTimeSince(difference)} ago`;
     });
-  };
+  }
+
+  function addSearch() {
+    const input = document.createElement('input');
+    input.type = 'search';
+    input.id = 'search';
+    input.setAttribute('placeholder', 'Search');
+    document.getElementById('page-header').appendChild(input);
+
+    const sortColumns = Array.from(document.querySelectorAll('thead a'));
+    const nameColumns = Array.from(document.querySelectorAll('tbody .indexcolname'));
+    const rows = nameColumns.map(({ parentNode }) => parentNode);
+    const fileNames = nameColumns.map(({ textContent }) => textContent);
+
+    function filter(value) {
+      // Allow tabbing out of the search input and skipping the sort links
+      // when there is a search value.
+      sortColumns.forEach((link) => {
+        if (value) {
+          link.tabIndex = -1;
+        } else {
+          link.removeAttribute('tabIndex');
+        }
+      });
+
+      // Test the input against the file/folder name.
+      let even = false;
+      fileNames.forEach((name, i) => {
+        if (!value || name.toLowerCase().includes(value.toLowerCase())) {
+          const className = even ? 'even' : '';
+          rows[i].className = className;
+          even = !even;
+        } else {
+          rows[i].className = 'hidden';
+        }
+      });
+    }
+
+    document.getElementById('search').addEventListener('input', ({ target }) => {
+      filter(target.value);
+    });
+
+    filter('');
+  }
 
   fixTable();
   addTitle();
   fixTime();
-
-})();
+  addSearch();
+}

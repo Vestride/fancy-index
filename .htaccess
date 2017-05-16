@@ -31,27 +31,42 @@ AddEncoding gzip svgz
   ReadmeName /fancy-index/footer.html
 
   # IGNORE THESE FILES
-  IndexIgnore .htaccess .ftpquota .DS_Store *,v *,t .??* *~ *#
+  IndexIgnoreReset ON
+  IndexIgnore .ftpquota .DS_Store .git
 
   # DEFAULT ICON
   DefaultIcon /fancy-index/icons/file-text.svg
 
   AddIcon /fancy-index/icons/back.svg ..
+  AddIcon /fancy-index/icons/github.svg .github
+  AddIcon /fancy-index/icons/nodejs.svg node_modules
   AddIcon /fancy-index/icons/file-directory.svg ^^DIRECTORY^^
 
   # SPECIFIC FILE ICONS
-  AddIcon /fancy-index/icons/file-code.svg .c .h .mustache .rust .source .apache .styl .jade
-  AddIcon /fancy-index/icons/file-media.svg .png .jpg .jpeg .webp .gif .bmp .psd .mp4 .webm .ogv .mov
+  # https://github.com/file-icons/source
+  AddIcon /fancy-index/icons/file-code.svg .c .h .mustache .rust .source .apache .yml .jade
+  AddIcon /fancy-index/icons/file-media.svg .png .jpg .jpeg .webp .gif .bmp .mp4 .webm .ogv .mov .ico
   AddIcon /fancy-index/icons/file-pdf.svg .pdf
   AddIcon /fancy-index/icons/file-text.svg .txt README readme Procfile
   AddIcon /fancy-index/icons/file-zip.svg .zip .z .gz .Z .tgz .tar.gz .tar .rar
-  AddIcon /fancy-index/icons/less.png .less
+  AddIcon /fancy-index/icons/gear.svg .htaccess .env .env-dev .env-production .env-staging
+  AddIcon /fancy-index/icons/config.svg .conf .ini .cfg .prefs
+  AddIcon /fancy-index/icons/less.svg .less
   AddIcon /fancy-index/icons/css.svg .css
   AddIcon /fancy-index/icons/html.svg .html .htm
   AddIcon /fancy-index/icons/coffee.svg .coffee
   AddIcon /fancy-index/icons/java.svg .java
   AddIcon /fancy-index/icons/markdown.svg .markdown .md
+  AddIcon /fancy-index/icons/eslint.svg *.eslintignore *.eslintrc.js *.eslintrc.json *.eslintrc *.eslintrc.yml
+  AddIcon /fancy-index/icons/webpack.svg webpack.config.js
+  AddIcon /fancy-index/icons/rollup.svg rollup.config.js
+  AddIcon /fancy-index/icons/postcss.svg postcss.config.js *.postcssrc *.postcssrc.json *.postcssrc.js *.postcssrc.yml
+  AddIcon /fancy-index/icons/grunt.svg gruntfile.js Gruntfile.js
+  AddIcon /fancy-index/icons/gulp.svg gulpfile.js Gulpfile.js
   AddIcon /fancy-index/icons/js.svg .js
+  AddIcon /fancy-index/icons/composer.svg composer.json composer.lock composer.phar
+  AddIcon /fancy-index/icons/bower.svg bower.json
+  AddIcon /fancy-index/icons/npm.svg package.json package-lock.json
   AddIcon /fancy-index/icons/settings.svg .json
   AddIcon /fancy-index/icons/mustache.svg .mustache
   AddIcon /fancy-index/icons/php.svg .php
@@ -60,8 +75,23 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/rust.svg .rust
   AddIcon /fancy-index/icons/sass.svg .sass
   AddIcon /fancy-index/icons/scss.svg .scss
-  AddIcon /fancy-index/icons/svg.svg .svg .svgx .eps .ai
+  AddIcon /fancy-index/icons/svg.svg .svg .svgx .eps
   AddIcon /fancy-index/icons/xml.svg .xml
+  AddIcon /fancy-index/icons/typescript.svg .ts
+  AddIcon /fancy-index/icons/vue.svg .vue
+  AddIcon /fancy-index/icons/yarn.svg yarn.lock
+  AddIcon /fancy-index/icons/babel.svg *.babelrc
+  AddIcon /fancy-index/icons/git.svg *.gitignore *.gitattributes
+  AddIcon /fancy-index/icons/editor-config.svg .editorconfig
+  AddIcon /fancy-index/icons/shopify.svg .liquid
+  AddIcon /fancy-index/icons/nunjucks.svg .nunjucks
+  AddIcon /fancy-index/icons/pug.svg .pug
+  AddIcon /fancy-index/icons/adobe-photoshop.svg .psd
+  AddIcon /fancy-index/icons/adobe-illustrator.svg .ai
+  AddIcon /fancy-index/icons/stylus.svg .styl
+  AddIcon /fancy-index/icons/terminal.svg .sh .bash
+  AddIcon /fancy-index/icons/database.svg .sql .mysql .sqlite .dsql .db
+  AddIcon /fancy-index/icons/vagrant.svg vagrantfile Vagrantfile
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3

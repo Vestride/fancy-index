@@ -1,60 +1,37 @@
 body {
   margin: 0;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
   color: #404040;
 }
+
 table {
   width: 100%;
   background: white;
   border: 0;
   table-layout: auto;
 }
-table caption {
-  background: transparent;
-  color: #222222;
-  font-size: 1rem;
-  font-weight: bold;
-}
+
 table thead {
-  background: whitesmoke;
+  background: #efefef;
 }
-table thead tr th,
-table thead tr td {
-  padding: 0.5rem 0.625rem 0.625rem;
-  font-size: 0.875rem;
-  font-weight: bold;
-  color: #222222;
-}
-table tfoot {
-  background: whitesmoke;
-}
-table tfoot tr th,
-table tfoot tr td {
-  padding: 0.5rem 0.625rem 0.625rem;
-  font-size: 0.875rem;
-  font-weight: bold;
-  color: #222222;
-}
+
 table tr th,
 table tr td {
   padding: 0.5625rem 0.625rem;
   font-size: 0.875rem;
   color: #222222;
   text-align: left;
-}
-table tr.alt,
-table tr:nth-of-type(even) {
-  background: #f9f9f9;
-}
-table thead tr th,
-table tfoot tr th,
-table tfoot tr td,
-table tbody tr th,
-table tbody tr td,
-table tr td {
-  display: table-cell;
   line-height: 1.125rem;
+}
+
+table thead tr th {
+  padding: 0.5rem 0.625rem 0.625rem;
+  font-weight: bold;
+}
+
+table tr.even {
+  background: whitesmoke;
 }
 
 a {
@@ -74,18 +51,52 @@ a:visited {
   vertical-align: middle;
   display: inline-block;
   margin-right: 8px;
-  margin-bottom: 2px;
   width: 16px;
+  height: 16px;
 }
 
-.indexcolicon {
-  display: none\9;
-}
-
-td img {
+.img-wrap img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
+
+.img-wrap + a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
+}
+
+#page-header {
+  display: flex;
+  align-items: center;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+}
+
+#search {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  margin-left: 1rem;
+  -webkit-appearance: textfield;
+}
+
+#search:focus {
+  border-color: #3498db;
+  outline: 0;
 }
 
 /* Hide extra columns so they don't squash file names */
@@ -99,10 +110,21 @@ td img {
   h1 {
     font-size: 1.5em;
   }
+
+  #page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 1em
+  }
+
+  #search {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 1.125em;
+    font-size: 1.375em;
   }
 }

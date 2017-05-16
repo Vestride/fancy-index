@@ -1,0 +1,17 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M144.790323,96.7151549 L255.602823,85 L366.415323,96.7151549 L452.205645,211.881084 L255.602823,440.823009 L59,211.881084 L144.790323,96.7151549 Z" fill="#FDB300"/>
+    <g transform="translate(59.000000, 211.881084)">
+      <polygon fill="#EA6C00" points="79.634 0 196.603 228.942 0 0"/>
+      <polygon fill="#EA6C00" transform="translate(294.904234, 114.470962) scale(-1, 1) translate(-294.904234, -114.470962)" points="276.237 0 393.206 228.942 196.603 0"/>
+      <polygon fill="#FDAD00" points="79.634 0 313.572 0 196.603 228.942"/>
+    </g>
+    <g transform="translate(59.000000, 85.000000)">
+      <polygon fill="#FDD231" points="196.603 0 85.79 11.715 79.634 126.881"/>
+      <polygon fill="#FDD231" transform="translate(255.087198, 63.440542) scale(-1, 1) translate(-255.087198, -63.440542)" points="313.572 0 202.759 11.715 196.603 126.881"/>
+      <polygon fill="#FDAD00" transform="translate(350.310484, 69.298119) scale(-1, 1) translate(-350.310484, -69.298119)" points="307.415 126.881 393.206 11.715 387.049 126.881"/>
+      <polygon fill="#FDAD00" points="0 126.881 85.79 11.715 79.634 126.881"/>
+      <polygon fill="#FEEEB7" points="196.603 0 79.634 126.881 313.572 126.881"/>
+    </g>
+  </g>
+</svg>
