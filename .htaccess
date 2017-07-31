@@ -32,7 +32,7 @@ AddEncoding gzip svgz
 
   # IGNORE THESE FILES
   IndexIgnoreReset ON
-  IndexIgnore .ftpquota .DS_Store .git
+  IndexIgnore .ftpquota .DS_Store .git .htaccess /fancy-index
 
   # DEFAULT ICON
   DefaultIcon /fancy-index/icons/file-text.svg
