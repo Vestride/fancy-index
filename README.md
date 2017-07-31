@@ -43,3 +43,14 @@ Now you don't have to zoom in or be a sniper with your finger!
 | Default  | Fancy  |
 |:--------:|:------:|
 |![before fancy index (mobile)](before_mobile.png)  |  ![after fancy index (mobile)](after_mobile.png)|
+
+## Customizing hidden files and directories
+
+If you want to hidde some files or directories, for example the `fancy-index` directory, there are a `IndexIgnore` directive in `.htaccess` file.
+
+1. Edit `.htaccess` file in root directory.
+2. Look for the "IGNORE THESE FILES" section.
+3. Update the `IndexIgnore` directive with the path of files and directories to hide, separed by spaces.
+	* For example: `IndexIgnore .ftpquota .DS_Store .git /fancy-index`
+4. Save the changes.
+5. Reload the index page.
