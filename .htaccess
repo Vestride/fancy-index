@@ -128,6 +128,19 @@ AddEncoding gzip svgz
   AddDescription "BitTorrent file" .torrent
   AddDescription "Windows link" .lnk .url
   AddDescription "Scalable Vector Graphic" .svg
+  AddDescription "OpenDocument Text" .odt
+  AddDescription "OpenDocument Spreadsheet" .ods
+  AddDescription "OpenDocument Presentation" .odp
+  AddDescription "OpenDocument Graphics" .odg
+  AddDescription "OpenDocument Chart" .odc
+  AddDescription "OpenDocument Formula" .odf
+  AddDescription "OpenDocument Database" .odb
+  AddDescription "OpenDocument Image" .odi
+  AddDescription "OpenDocument Text Master" .odm
+  AddDescription "OpenDocument Text Template" .ott
+  AddDescription "OpenDocument Spreadsheet Template" .ots
+  AddDescription "OpenDocument Presentation Template" .otp
+  AddDescription "OpenDocument Graphics Template" .otg
 
   # DEFAULT DESCRIPTION
   # AddDescription "[<span class='description'>Unknown item</span>]" *
