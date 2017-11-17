@@ -34,7 +34,7 @@ DocumentRoot "/Users/glen.cheney/Sites"
 
 Now restart apache `sudo apachectl restart`.
 
-If you're having trouble or don't see the correct files, follow one of these guides ([Yosemite](http://coolestguidesontheplanet.com/get-apache-mysql-php-phpmyadmin-working-osx-10-10-yosemite/), [El Capitan](http://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-osx-10-11-el-capitan/), [Sierra](https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-macos-sierra/)) to get your Sites folder working.
+If you're having trouble or don't see the correct files, follow one of these guides ([Yosemite](http://coolestguidesontheplanet.com/get-apache-mysql-php-phpmyadmin-working-osx-10-10-yosemite/), [El Capitan](http://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-osx-10-11-el-capitan/), [Sierra](https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-macos-sierra/), [High Sierra](https://coolestguidesontheplanet.com/install-apache-mysql-php-and-phpmyadmin-on-macos-high-sierra-10-13/)) to get your Sites folder working.
 
 ## Mobile Comparison
 
