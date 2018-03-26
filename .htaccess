@@ -47,7 +47,7 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/file-code.svg .c .h .mustache .rust .source .apache .yml .jade
   AddIcon /fancy-index/icons/file-media.svg .png .jpg .jpeg .webp .gif .bmp .mp4 .webm .ogv .mov .ico
   AddIcon /fancy-index/icons/file-pdf.svg .pdf
-  AddIcon /fancy-index/icons/file-text.svg .txt README readme Procfile
+  AddIcon /fancy-index/icons/file-text.svg .txt .srt README readme Procfile
   AddIcon /fancy-index/icons/file-zip.svg .zip .z .gz .Z .tgz .tar.gz .tar .rar
   AddIcon /fancy-index/icons/gear.svg .htaccess .env .env-dev .env-production .env-staging
   AddIcon /fancy-index/icons/config.svg .conf .ini .cfg .prefs
@@ -95,6 +95,8 @@ AddEncoding gzip svgz
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3
+  AddDescription "MPEG Layer 4 Format" .mp4
+  AddDescription "SubRip subtitles format" .srt
   AddDescription "GZIP compressed TAR archive" .tgz .tar.gz
   AddDescription "GZIP compressed archive" .Z .z .gz .zip
   AddDescription "RAR compressed archive" .rar
