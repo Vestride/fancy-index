@@ -101,9 +101,7 @@ a:visited {
 
 /* Hide extra columns so they don't squash file names */
 @media (max-width: 600px) {
-  table tr > *:nth-child(2),
-  table tr > *:nth-child(3),
-  table tr > *:nth-child(4) {
+  .indexcollastmod, .indexcoldesc, .indexcolsize {
     display: none;
   }
 
