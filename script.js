@@ -42,7 +42,8 @@
 
   // Underscore string's titleize.
   function titleize(str) {
-    return decodeURI(str).toLowerCase().replace(/(?:^|\s|-)\S/g, c => c.toUpperCase());
+	let newstr = decodeURI(str).toLowerCase().replace(/(?:^|\s|-)\S/g, c => c.toUpperCase());
+	return newstr.replace(/%20/g, " ");
   }
 
   function addTitle() {
