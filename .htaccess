@@ -92,6 +92,12 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/terminal.svg .sh .bash
   AddIcon /fancy-index/icons/database.svg .sql .mysql .sqlite .dsql .db
   AddIcon /fancy-index/icons/vagrant.svg vagrantfile Vagrantfile
+  AddIcon /fancy-index/icons/file-word.svg .doc .docx
+  AddIcon /fancy-index/icons/file-excel.svg .xls .xlsx
+  AddIcon /fancy-index/icons/yaml.svg .yml .yaml
+  AddIcon /fancy-index/icons/brainfuck.svg .b
+  AddIcon /fancy-index/icons/cobol.svg .cbl .cob .cpy
+  AddIcon /fancy-index/icons/docker.svg docker-compose.yml
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3
@@ -117,7 +123,8 @@ AddEncoding gzip svgz
   AddDescription "Plain text file" .txt .nfo .faq .readme
   AddDescription "Unix man page" .man
   AddDescription "Email data" .eml .mbox
-  AddDescription "Microsoft Word document" .doc
+  AddDescription "Microsoft Word document" .doc .docx
+  AddDescription "Microsoft Excel document" .xls .xlsx
   AddDescription "PHP: Hypertext Preprocessor script" .php  .php3 .php4
   AddDescription "PHP: Hypertext Preprocessor source code" .phps
   AddDescription "JavaScript Object Notation" .json
@@ -143,6 +150,10 @@ AddEncoding gzip svgz
   AddDescription "OpenDocument Spreadsheet Template" .ots
   AddDescription "OpenDocument Presentation Template" .otp
   AddDescription "OpenDocument Graphics Template" .otg
+  AddDescription "YAML: Yet Another Markup Language" .yaml .yml
+  AddDescription "SASS: Syntactically Awesome Stylesheets" .sass
+  AddDescription "SCSS: Sassy Cascading Style Sheet" .scss
+  AddDescription "Travis configuration" .travis
 
   # DEFAULT DESCRIPTION
   # AddDescription "[<span class='description'>Unknown item</span>]" *
