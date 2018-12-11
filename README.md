@@ -15,7 +15,11 @@ I was tired of seeing the ugly apache-generated index page, so I decided to do s
 
 I'm going to assume you're using a `Sites` folder with apache, but it could be done differently. Wherever you see `USERNAME`, use your username.
 
-1. Clone or download the files.
+1. Clone or download the files to any location. For example `/usr/share/fancy-index`.
+  + Copy `fancy-index.inc` to your Apache `sites.d` directory. Usually `/etc/httpd/conf/sites.d/`.
+  + Include this file to the Virtual Host you want to have a fancy index. `Include /etc/httpd/conf/sites.d/fancy-index.inc`
+  + Restart your webserver.
+  + The following points may or may not be suitable.
 2. Add them to your `Sites` directory. The structure should be `/Users/USERNAME/Sites/fancy-index`.
 3. Copy the `.htaccess` file up one directory to `/Users/USERNAME/Sites/.htaccess`.
 4. Update your `DocumentRoot` in `/etc/apache2/users/USERNAME.conf` to point to your `Sites`. This will also cause `localhost` to point to `Sites` and you won't have to use the `~USERNAME` to access it.
