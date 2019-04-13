@@ -99,6 +99,7 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/brainfuck.svg .b
   AddIcon /fancy-index/icons/cobol.svg .cbl .cob .cpy
   AddIcon /fancy-index/icons/docker.svg docker-compose.yml
+  AddIcon /fancy-index/icons/VirtualBox.svg .ova .vbox
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3
