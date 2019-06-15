@@ -69,64 +69,78 @@
     document.title = titleText;
   }
 
-  function getTimeSince(seconds) {
-    let intervalType;
-
-    let interval = Math.floor(seconds / 31536000);
-    if (interval >= 1) {
-      intervalType = 'year';
-    } else {
-      interval = Math.floor(seconds / 2592000);
-      if (interval >= 1) {
-        intervalType = 'month';
-      } else {
-        interval = Math.floor(seconds / 86400);
-        if (interval >= 1) {
-          intervalType = 'day';
-        } else {
-          interval = Math.floor(seconds / 3600);
-          if (interval >= 1) {
-            intervalType = 'hour';
-          } else {
-            interval = Math.floor(seconds / 60);
-            if (interval >= 1) {
-              intervalType = 'minute';
-            } else {
-              interval = seconds;
-              intervalType = 'second';
-            }
-          }
-        }
-      }
+  /**
+   * Get the value and unit to use for RelativeTimeFormat.
+   * @param {number} seconds Difference in seconds between two dates.
+   */
+  function getTimeFormatArgs(seconds) {
+    const absoluteSeconds = Math.abs(seconds);
+    if (absoluteSeconds > 60 * 60 * 24 * 365) {
+      return { value: seconds / (60 * 60 * 24 * 365), unit: 'year' };
     }
 
-    if (interval > 1 || interval === 0) {
-      intervalType += 's';
+    if (absoluteSeconds > 60 * 60 * 24 * 30) {
+      return { value: seconds / (60 * 60 * 24 * 30), unit: 'month' };
     }
 
-    return `${interval} ${intervalType}`;
+    if (absoluteSeconds > 60 * 60 * 24) {
+      return { value: seconds / (60 * 60 * 24), unit: 'day' };
+    }
+
+    if (absoluteSeconds > 60 * 60) {
+      return { value: seconds / (60 * 60), unit: 'hour' };
+    }
+
+    if (absoluteSeconds > 60) {
+      return { value: seconds / 60, unit: 'minute' };
+    }
+
+    return { value: seconds, unit: 'second' };
+  }
+
+  /**
+   * Convert the date output from the server to a Date instance.
+   * @param {string} str Date string from the server.
+   * @return {Date | null}
+   */
+  function getDateFromString(str) {
+    if (!str) {
+      return null;
+    }
+
+    // 2014-12-09 10:43 -> 2014, 11, 09, 10, 43, 0.
+    const parts = str.split(' ');
+    const day = parts[0].split('-');
+    const timeOfDay = parts[1].split(':');
+    const year = parseInt(day[0], 10);
+    const month = parseInt(day[1], 10) - 1;
+    const _day = parseInt(day[2], 10);
+    const hour = parseInt(timeOfDay[0], 10);
+    const minutes = parseInt(timeOfDay[1], 10);
+
+    return new Date(year, month, _day, hour, minutes, 0);
   }
 
   function fixTime() {
-    const dates = Array.from(document.querySelectorAll('.indexcollastmod'));
-    const now = new Date();
-    dates.forEach((date, i) => {
-      const stamp = date.textContent.trim();
-      if (!stamp || i === 0) return;
+    const hasRelativeTimeFormatter = 'RelativeTimeFormat' in Intl;
+    if (!hasRelativeTimeFormatter) return;
 
-      // 2014-12-09 10:43 -> 2014, 11, 09, 10, 43, 0.
-      const parts = stamp.split(' ');
-      const day = parts[0].split('-');
-      const timeOfDay = parts[1].split(':');
-      const year = parseInt(day[0], 10);
-      const month = parseInt(day[1], 10) - 1;
-      const _day = parseInt(day[2], 10);
-      const hour = parseInt(timeOfDay[0], 10);
-      const minutes = parseInt(timeOfDay[1], 10);
+    const formatter = new Intl.RelativeTimeFormat();
+    const now = Date.now();
 
-      const time = new Date(year, month, _day, hour, minutes, 0);
-      const difference = Math.round((now.getTime() - time.getTime()) / 1000);
-      date.textContent = `${getTimeSince(difference)} ago`;
+    Array.from(document.querySelectorAll('.indexcollastmod')).forEach((date, i) => {
+      // Skip the first row because it's the link to the parent directory.
+      if (i === 0) {
+        return;
+      }
+
+      const lastModified = getDateFromString(date.textContent.trim());
+
+      if (lastModified && !Number.isNaN(lastModified)) {
+        const difference = Math.round((lastModified.getTime() - now) / 1000);
+        const relativeFormat = getTimeFormatArgs(difference);
+        date.textContent = formatter.format(Math.round(relativeFormat.value), relativeFormat.unit);
+      }
     });
   }
 
