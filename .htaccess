@@ -42,6 +42,65 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/nodejs.svg node_modules
   AddIcon /fancy-index/icons/file-directory.svg ^^DIRECTORY^^
 
+  # SPECIFIC DOWNLOAD FILES
+  AddType application/octet-stream  .com .exe
+  AddType application/octet-stream  .c .h .mustache .rust .source .apache .yml .jade
+  AddType application/octet-stream  .png .jpg .jpeg .webp .gif .bmp .mp4 .webm .ogv .mov .ico
+  AddType application/octet-stream  .pdf
+  AddType application/octet-stream  .txt .srt README readme Procfile
+  AddType application/octet-stream  .zip .z .gz .Z .tgz .tar.gz .tar .rar
+  AddType application/octet-stream  .env .env-dev .env-production .env-staging
+#  AddType application/octet-stream  .htaccess
+  AddType application/octet-stream  .conf .ini .cfg .prefs
+  AddType application/octet-stream  .less
+  AddType application/octet-stream  .css
+  AddType application/octet-stream  .html .htm
+  AddType application/octet-stream  .coffee
+  AddType application/octet-stream  .java
+  AddType application/octet-stream  .markdown .md
+  AddType application/octet-stream  *.eslintignore *.eslintrc.js *.eslintrc.json *.eslintrc *.eslintrc.yml
+  AddType application/octet-stream  webpack.config.js
+  AddType application/octet-stream  rollup.config.js
+  AddType application/octet-stream  postcss.config.js *.postcssrc *.postcssrc.json *.postcssrc.js *.postcssrc.yml
+  AddType application/octet-stream  gruntfile.js Gruntfile.js
+  AddType application/octet-stream  gulpfile.js Gulpfile.js
+  AddType application/octet-stream  .js
+  AddType application/octet-stream  composer.json composer.lock composer.phar
+  AddType application/octet-stream  bower.json
+  AddType application/octet-stream  package.json package-lock.json
+  AddType application/octet-stream  .json
+  AddType application/octet-stream  .mustache
+  AddType application/octet-stream  .php
+  AddType application/octet-stream  .py
+  AddType application/octet-stream  .rb
+  AddType application/octet-stream  .rust
+  AddType application/octet-stream  .sass
+  AddType application/octet-stream  .scss
+  AddType application/octet-stream  .svg .svgx .eps
+  AddType application/octet-stream  .xml
+  AddType application/octet-stream  .ts
+  AddType application/octet-stream  .vue
+  AddType application/octet-stream  yarn.lock
+  AddType application/octet-stream  *.babelrc
+  AddType application/octet-stream  *.gitignore *.gitattributes
+  AddType application/octet-stream  .editorconfig
+  AddType application/octet-stream  .liquid
+  AddType application/octet-stream  .nunjucks
+  AddType application/octet-stream  .pug
+  AddType application/octet-stream  .psd
+  AddType application/octet-stream  .ai
+  AddType application/octet-stream  .styl
+  AddType application/octet-stream  .sh .bash
+  AddType application/octet-stream  .sql .mysql .sqlite .dsql .db
+  AddType application/octet-stream  vagrantfile Vagrantfile
+  AddType application/octet-stream  .doc .docx
+  AddType application/octet-stream  .xls .xlsx
+  AddType application/octet-stream  .yml .yaml
+  AddType application/octet-stream  .b
+  AddType application/octet-stream  .cbl .cob .cpy
+  AddType application/octet-stream  docker-compose.yml
+  AddType application/octet-stream  .ova .vbox
+
   # SPECIFIC FILE ICONS
   # https://github.com/file-icons/source
   AddIcon /fancy-index/icons/file-binary.svg .com .exe
