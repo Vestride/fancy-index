@@ -1,26 +1,59 @@
+:root {
+  --color-bg: white;
+  --color-text: #404040;
+  --color-table-bg: white;
+  --color-table-bg--head: #efefef;
+  --color-table-bg--even: whitesmoke;
+  --color-table-text: #222222;
+  --color-link-text: #3498db;
+  --color-link-text--visited: #8e44ad;
+  --color-search-text: #8e44ad;
+  --color-search-bg: white;
+  --color-search-border: rgba(0, 0, 0, .15);
+  --color-search-border--focus: #8e44ad;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #222222;
+    --color-text: #bbb;
+    --color-table-bg: #222222;
+    --color-table-bg--head: #181818;
+    --color-table-bg--even: #333;
+    --color-table-text: #ccc;
+    --color-link-text: #3096d5;
+    --color-link-text--visited: #9e4ebf;
+    --color-search-text: #9e4ebf;
+    --color-search-bg: #181818;
+    --color-search-border: rgba(255, 255, 255, .15);
+    --color-search-border--focus: #9e4ebf;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
-  color: #404040;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 table {
   width: 100%;
-  background: white;
+  background: var(--color-table-bg);
   border: 0;
   table-layout: auto;
 }
 
 table thead {
-  background: #efefef;
+  background: var(--color-table-bg--head);
 }
 
 table tr th,
 table tr td {
   padding: 0.5625rem 0.625rem;
   font-size: 0.875rem;
-  color: #222222;
+  color: var(--color-table-text);
   text-align: left;
   line-height: 1.125rem;
 }
@@ -31,12 +64,12 @@ table thead tr th {
 }
 
 table tr.even {
-  background: whitesmoke;
+  background: var(--color-table-bg--even);
 }
 
 a {
   text-decoration: none;
-  color: #3498db;
+  color: var(--color-link-text);
 }
 
 a:hover {
@@ -44,7 +77,7 @@ a:hover {
 }
 
 a:visited {
-  color: #8e44ad;
+  color: var(--color-link-text--visited);
 }
 
 .img-wrap {
@@ -84,18 +117,18 @@ a:visited {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
-  color: #464a4c;
-  background-color: #fff;
+  color: var(--color-search-text);
+  background-color: var(--color-search-bg);
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-search-border);
   border-radius: 0.25rem;
   margin-left: 1rem;
   -webkit-appearance: textfield;
 }
 
 #search:focus {
-  border-color: #3498db;
+  border-color: var(--color-search-border--focus);
   outline: 0;
 }
 
