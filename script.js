@@ -187,8 +187,67 @@
     filter('');
   }
 
+  function addColorModeToggle() {
+    const svgSun = `<svg aria-hidden="true"><title>Light Mode</title><use href="#sun"></use></svg>`;
+    const svgMoon = `<svg aria-hidden="true"><title>Dark Mode</title><use href="#moon"></use></svg>`;
+
+    const btnLight = document.createElement('button');
+    btnLight.classList = 'color-mode__btn dark--hidden';
+
+    const btnDark = document.createElement('button');
+    btnDark.classList = 'color-mode__btn light--hidden';
+
+    document.getElementById('page-header').appendChild(btnLight).innerHTML = svgSun;
+    document.getElementById('page-header').appendChild(btnDark).innerHTML = svgMoon;
+  }
+
   fixTable();
   addTitle();
   fixTime();
   addSearch();
+  addColorModeToggle();
+
+  // Check if the browser supports this feature
+  if (window.CSS && CSS.supports("color", "var(--primary)")) {
+    // Initially get and set the preferred color mode
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: light)').matches ||
+      localStorage.getItem("color-mode") === 'light'
+    ) {
+      document.documentElement.setAttribute("color-mode", "light");
+      localStorage.setItem("color-mode", "light");
+    } else {
+      document.documentElement.setAttribute("color-mode", "dark");
+      localStorage.setItem("color-mode", "dark");
+    }
+    
+    // Function for the event listener, it toggles the color mode
+    var toggleColorMode = function toggleColorMode(e) {
+      // Switch to Light Mode
+      if (e.currentTarget.classList.contains("light--hidden")) {
+        document.documentElement.setAttribute("color-mode", "light");
+        localStorage.setItem("color-mode", "light");
+        return;
+      }
+      
+      // Switch to Dark Mode
+      document.documentElement.setAttribute("color-mode", "dark");
+      localStorage.setItem("color-mode", "dark");
+    };
+
+    // Get the color mode buttons in the DOM
+    document.querySelectorAll(".color-mode__btn")
+    // Add the event listener to the buttons
+    .forEach(function (btn) {
+      btn.addEventListener("click", toggleColorMode);
+    });
+
+  } else {
+    // If the feature isn't supported, then hide the toggle buttons
+    document.querySelectorAll(".color-mode__btn")
+    .forEach(function (btn) {
+      btn.style.display = "none";
+    });
+  }
 }

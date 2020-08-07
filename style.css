@@ -1,4 +1,4 @@
-:root {
+:root[color-mode="light"] {
   --color-bg: white;
   --color-text: #404040;
   --color-table-bg: white;
@@ -13,21 +13,27 @@
   --color-search-border--focus: #8e44ad;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #222222;
-    --color-text: #bbb;
-    --color-table-bg: #222222;
-    --color-table-bg--head: #181818;
-    --color-table-bg--even: #333;
-    --color-table-text: #ccc;
-    --color-link-text: #3096d5;
-    --color-link-text--visited: #9e4ebf;
-    --color-search-text: #9e4ebf;
-    --color-search-bg: #181818;
-    --color-search-border: rgba(255, 255, 255, .15);
-    --color-search-border--focus: #9e4ebf;
-  }
+:root[color-mode="dark"] {
+  --color-bg: #222222;
+  --color-text: #bbb;
+  --color-table-bg: #222222;
+  --color-table-bg--head: #181818;
+  --color-table-bg--even: #333;
+  --color-table-text: #ccc;
+  --color-link-text: #66b4e4;
+  --color-link-text--visited: #c382df;
+  --color-search-text: #9e4ebf;
+  --color-search-bg: #181818;
+  --color-search-border: rgba(255, 255, 255, .15);
+  --color-search-border--focus: #9e4ebf;
+}
+
+:root[color-mode="light"] .light--hidden {
+  display: none;
+}
+
+:root[color-mode="dark"] .dark--hidden {
+  display: none;
 }
 
 body {
@@ -52,10 +58,14 @@ table thead {
 table tr th,
 table tr td {
   padding: 0.5625rem 0.625rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--color-table-text);
   text-align: left;
   line-height: 1.125rem;
+}
+
+table tr th a:visited {
+  color: var(--color-table-text);
 }
 
 table thead tr th {
@@ -130,6 +140,34 @@ a:visited {
 #search:focus {
   border-color: var(--color-search-border--focus);
   outline: 0;
+}
+
+.color-mode__btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--color-text);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 50px;
+}
+
+.color-mode__btn svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--color-text);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5px;
+}
+
+.color-mode__btn:hover svg,
+.color-mode__btn:focus svg, 
+.color-mode__btn:focus {
+  outline: none;
+  fill: var(--color-text);
 }
 
 /* Hide extra columns so they don't squash file names */
