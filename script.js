@@ -197,8 +197,8 @@
     const btnDark = document.createElement('button');
     btnDark.classList = 'color-mode__btn light--hidden';
 
-    document.getElementById('page-header').appendChild(btnLight).innerHTML = svgSun;
-    document.getElementById('page-header').appendChild(btnDark).innerHTML = svgMoon;
+    document.getElementById('page-header').appendChild(btnLight).innerHTML = svgMoon;
+    document.getElementById('page-header').appendChild(btnDark).innerHTML = svgSun;
   }
 
   fixTable();
