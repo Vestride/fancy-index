@@ -245,6 +245,11 @@
       btn.addEventListener("click", eventToggle);
     });
 
+    // Event listener for changes on the preferred color theme
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+      toggleColorMode(e.matches ? "light" : "dark");
+    });
+
   } else {
     // If the feature isn't supported, then hide the toggle buttons
     document.querySelectorAll(".color-mode__btn")
