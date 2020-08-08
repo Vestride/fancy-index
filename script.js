@@ -215,32 +215,34 @@
       window.matchMedia('(prefers-color-scheme: light)').matches ||
       localStorage.getItem("color-mode") === 'light'
     ) {
-      document.documentElement.setAttribute("color-mode", "light");
-      localStorage.setItem("color-mode", "light");
+      toggleColorMode('light');
     } else {
-      document.documentElement.setAttribute("color-mode", "dark");
-      localStorage.setItem("color-mode", "dark");
+      toggleColorMode('dark');
     }
     
+    // Toggles the color mode
+    function toggleColorMode(theme) {
+      document.documentElement.setAttribute("color-mode", theme);
+      localStorage.setItem("color-mode", theme);
+    }
+
     // Function for the event listener, it toggles the color mode
-    var toggleColorMode = function toggleColorMode(e) {
+    var eventToggle = function eventToggle(e) {
       // Switch to Light Mode
       if (e.currentTarget.classList.contains("light--hidden")) {
-        document.documentElement.setAttribute("color-mode", "light");
-        localStorage.setItem("color-mode", "light");
+        toggleColorMode('light');
         return;
       }
       
       // Switch to Dark Mode
-      document.documentElement.setAttribute("color-mode", "dark");
-      localStorage.setItem("color-mode", "dark");
+      toggleColorMode('dark');
     };
 
     // Get the color mode buttons in the DOM
     document.querySelectorAll(".color-mode__btn")
     // Add the event listener to the buttons
     .forEach(function (btn) {
-      btn.addEventListener("click", toggleColorMode);
+      btn.addEventListener("click", eventToggle);
     });
 
   } else {
