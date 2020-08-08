@@ -64,6 +64,10 @@ table tr td {
   line-height: 1.125rem;
 }
 
+table tr td.indexcolname {
+  word-break:break-all;
+}
+
 table tr th a:visited {
   color: var(--color-table-text);
 }
