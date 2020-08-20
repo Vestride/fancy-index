@@ -28,14 +28,6 @@
   --color-search-border--focus: #9e4ebf;
 }
 
-:root[color-mode="light"] .light--hidden {
-  display: none;
-}
-
-:root[color-mode="dark"] .dark--hidden {
-  display: none;
-}
-
 * {
   transition: background-color .2s ease-in;
 }
@@ -150,7 +142,7 @@ a:visited {
   outline: 0;
 }
 
-.color-mode__btn {
+.color-mode-btn {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
@@ -161,7 +153,7 @@ a:visited {
   border-radius: 50px;
 }
 
-.color-mode__btn svg {
+.color-mode-btn svg {
   width: 30px;
   height: 30px;
   fill: none;
@@ -171,9 +163,9 @@ a:visited {
   stroke-width: 1.5px;
 }
 
-.color-mode__btn:hover svg,
-.color-mode__btn:focus svg, 
-.color-mode__btn:focus {
+.color-mode-btn:hover svg,
+.color-mode-btn:focus svg,
+.color-mode-btn:focus {
   outline: none;
   fill: var(--color-text);
 }
