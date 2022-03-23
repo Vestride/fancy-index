@@ -32,7 +32,7 @@ AddEncoding gzip svgz
 
   # IGNORE THESE FILES
   IndexIgnoreReset ON
-  IndexIgnore .ftpquota .DS_Store .git
+  IndexIgnore .ftpquota .DS_Store .git fancy-index
 
   # DEFAULT ICON
   DefaultIcon /fancy-index/icons/file-text.svg
@@ -99,7 +99,7 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/brainfuck.svg .b
   AddIcon /fancy-index/icons/cobol.svg .cbl .cob .cpy
   AddIcon /fancy-index/icons/docker.svg docker-compose.yml
-  AddIcon /fancy-index/icons/VirtualBox.svg .ova .vbox
+  AddIcon /fancy-index/icons/virtualbox.svg .ova .vbox
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3
