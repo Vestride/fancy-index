@@ -6,8 +6,13 @@ AddEncoding gzip svgz
 
 # STRONG HTACCESS PROTECTION
 <Files ~ "^.*\.([Hh][Tt][Aa])">
- order allow,deny
- deny from all
+  <IfVersion < 2.3>
+    order allow,deny
+    deny from all
+  </IfVersion>
+  <IfVersion >= 2.3>
+    Require all denied
+  </IfVersion>
 </Files>
 
 # DIRECTORY CUSTOMIZATION
