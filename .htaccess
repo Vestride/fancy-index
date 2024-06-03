@@ -105,6 +105,8 @@ AddEncoding gzip svgz
   AddIcon /fancy-index/icons/cobol.svg .cbl .cob .cpy
   AddIcon /fancy-index/icons/docker.svg docker-compose.yml
   AddIcon /fancy-index/icons/virtualbox.svg .ova .vbox
+  AddIcon /fancy-index/icons/rpm.svg .rpm
+  AddIcon /fancy-index/icons/deb.svg .deb
 
   # FILE DESCRIPTIONS
   AddDescription "MPEG Layer 3 Format" .mp3
@@ -161,6 +163,8 @@ AddEncoding gzip svgz
   AddDescription "SASS: Syntactically Awesome Stylesheets" .sass
   AddDescription "SCSS: Sassy Cascading Style Sheet" .scss
   AddDescription "Travis configuration" .travis
+  AddDescription "RPM installation package" .rpm
+  AddDescription "Debian installation package" .
 
   # DEFAULT DESCRIPTION
   # AddDescription "[<span class='description'>Unknown item</span>]" *
