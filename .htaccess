@@ -164,7 +164,7 @@ AddEncoding gzip svgz
   AddDescription "SCSS: Sassy Cascading Style Sheet" .scss
   AddDescription "Travis configuration" .travis
   AddDescription "RPM installation package" .rpm
-  AddDescription "Debian installation package" .
+  AddDescription "Debian installation package" .deb
 
   # DEFAULT DESCRIPTION
   # AddDescription "[<span class='description'>Unknown item</span>]" *
